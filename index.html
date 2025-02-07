@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fabricantes especializados en piezas de fibra de carbono para automóviles - Ligereza y máximo rendimiento">
+    <title>Carbon Performance - Piezas Deportivas en Fibra de Carbono</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e53935;
+            --secondary: #212121;
+            --accent: #64dd17;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: var(--secondary);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #212121, #333);
+            padding: 1rem 5%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .parallax {
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/7.jpg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+    to right, 
+    #d0d0d0,  /* Light gray */
+    #404040,  /* Extremely dark gray */
+    #ffffff,  /* Pure white */
+    #202020,  /* Almost black */
+    #d0d0d0   /* Light gray */
+);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 1s ease;
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+        .section {
+            padding: 5rem 10%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .contact-section {
+            background: #111;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            background: #333;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #c62828;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+        /* Horizontal Scroll for Products */
+        .products-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) #333;
+        }
+
+        .products-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .products-scroll::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .products-scroll::-webkit-scrollbar-track {
+            background: #333;
+        }
+
+        .product-card {
+            flex: 0 0 auto;
+            width: 300px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        /* Enhanced "Expertos en Fibra de Carbono" Section */
+        .expertos-section {
+            background: #1a1a1a;
+            padding: 4rem 10%;
+            text-align: center;
+        }
+
+        .expertos-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .expertos-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .expertos-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .advantage-item {
+            background: #333;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .advantage-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #111;
+            padding: 2rem 10%;
+            text-align: center;
+        }
+
+        .footer .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer .social-links a:hover {
+            color: var(--primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">z6 composites </div>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <section class="parallax hero" id="inicio">
+        <div class="hero-content">
+            <h1>MAXIMIZA EL RENDIMIENTO</h1>
+            <p>Piezas deportivas en fibra de carbono de alta calidad</p>
+        </div>
+    </section>
+
+
+    <section class="section" id="productos">
+        <div>
+            <h2>Nuestros Productos Estrella</h2>
+            <div class="products-scroll">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('images/1.jpg')"></div>
+                    <div class="product-info">
+                        <h3>Capó Deportivo</h3>
+                        <p>Peso reducido en 60% - Aerodinámica mejorada</p>
+                        <button class="btn">Ver Detalles</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('images/2.jpg')"></div>
+                    <div class="product-info">
+                        <h3>Difusor Trasero</h3>
+                        <p>Diseño race-inspired - Mejor flujo de aire</p>
+                        <button class="btn">Ver Detalles</button>
+                    </div>
+                </div>
+                <!-- Add more product cards here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="section expertos-section" id="nosotros">
+        <div class="expertos-content">
+            <h2>Expertos en Fibra de Carbono</h2>
+            <p>Con más de 10 años de experiencia en la fabricación de componentes automotrices, nos hemos consolidado como líderes en el mercado de piezas de fibra de carbono. Nuestro compromiso con la calidad y la innovación nos permite ofrecer productos que no solo mejoran el rendimiento de tu vehículo, sino que también elevan su estética.</p>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Precisión</h3>
+                    <p>Fabricación con tolerancias milimétricas.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-weight-hanging"></i>
+                    <h3>Ligereza</h3>
+                    <p>Reducción de peso hasta en un 60%.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Rendimiento</h3>
+                    <p>Diseños optimizados para máxima eficiencia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section contact-section" id="contacto">
+        <div>
+            <h2>Contacto</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="5" placeholder="Mensaje" required></textarea>
+                <button class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+        <div>
+            <h3>Visítanos</h3>
+            <iframe src="https://www.google.com/maps?q=43.355735,-8.410948&z=17&hl=es&output=embed" 
+                    style="width:100%; height:300px; border:0;" 
+                    allowfullscreen></iframe>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="signature">Fran Pose</div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:info@carbono-store.com"><i class="far fa-envelope"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
